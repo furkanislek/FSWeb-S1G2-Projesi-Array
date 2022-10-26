@@ -189,9 +189,24 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
 
-function ortalamaKelimeSayisi(/*kod buraya*/) {
+function ortalamaKelimeSayisi(tatlar) {
   /*kod buraya*/
+  var ortArr = kopyala(tatlar);
+  var iki = 0;
+  var bir = 0;
+
+  for(var i = 0; i< ortArr.length; i++){
+    if(ortArr[i].includes(" ")){
+     iki++
+    }else{
+      bir++
+    }
+  }
+  var res = (bir + iki*2)/(bir+iki)
+  return res;
 }
+
+console.log(ortalamaKelimeSayisi(orijinalTatlar));
 
 /* ALIŞTIRMA 2:
 Firma mevcut tatların yanında artık mevsimlik lezzetler ve hatta bölgesel lezzetler de sunmaktadır. Toplam 25 lezzet aromasını
