@@ -29,6 +29,43 @@ const orijinalTatlar = [
   "Vanilya",
 ];
 
+const yeniTatlar = [
+  "Badem",
+  "Ballı Badem",
+  "Fıstık Ezmesi",
+  "Profiterol",
+  "Madlen Çikolata"
+]
+
+const mevsimlikTatlar = [
+"Pekan",
+"Kaju",
+"Çikolatalı Mousse",
+"Fransız Vanilyası",
+"Yumurta",
+"Alman çikolatası",
+"Kek üzerine krema",
+"Hindistan Cevizi",
+"Kaymaklı Biskuvi",
+"Beyaz Çikolata",
+"Mango"
+]
+
+const bolgeselTatlar = [
+"Kaymak",
+"Karpuz",
+"Karadut",
+"Turunç",
+"Portakal",
+"Yogurt",
+"Krem Peynir",
+"Kakao",
+"Karamel macchiato",
+"Kuru üzüm",
+"Peynir",
+"Karamel"
+]
+
 /* Görev 1: Diziyi kopyalama!
 Orijinal tatların bulunduğu toplam 25 aromanın olduğu bir dizimiz var (yukarıya bakın). Bu görevde, bu dizi'ye veri yazma ve bu diziden veri okuma işlemleri yapacağız.
 Tüm bu değişiklikleri yaparken, gerçek, orijinal 25 lezzetin listesini kaybetmek istemiyoruz. Bu yüzden orijinal diziyi kopyalamamız gerekmektedir!
@@ -208,6 +245,8 @@ function ortalamaKelimeSayisi(tatlar) {
 
 console.log(ortalamaKelimeSayisi(orijinalTatlar));
 
+
+
 /* ALIŞTIRMA 2:
 Firma mevcut tatların yanında artık mevsimlik lezzetler ve hatta bölgesel lezzetler de sunmaktadır. Toplam 25 lezzet aromasını
 orijinalTatlar, yeniTatlar, mevsimlikTatlar ve bolgeselTatlar'dan rastgele seçecek ve bunu rastgeleTatlar adlı bir dizide saklayan bir fonksiyon yazın.
@@ -219,48 +258,38 @@ Aşağıdakileri yapmak için rastgeleTatlar işlevini ve yeni dizileri kullanı
 
   Örneğin: rastgeleTatlar(orijinalTatlar, yeniTatlar, mevsimlikTatlar, bolgeselTatlar) çalıştırıldığında ["Kestane", "Ballı Badem,"..."Hindistan Cevizi", "Kuru üzüm"].
 */
-
-function rastgeleTatlar(/*kod buraya*/) {
-  /*kod buraya*/
+function yeniNesilTatlar(){
+  var orjTat = orijinalTatlar.slice();
+  var yenTat = yeniTatlar.slice();
+  var mevTat = mevsimlikTatlar.slice();
+  var bolTat = bolgeselTatlar.slice();
+  var newRastTat = orjTat.concat(yenTat,mevTat, bolTat);
+  return newRastTat;
 }
+// console.log(yeniNesilTatlar());
 
-// NEW DATA ARRAYS FOR STRETCH 2 ⬇️
-// const yeniTatlar = [
-//   "Badem",
-//   "Ballı Badem",
-//   "Fıstık Ezmesi",
-//   "Profiterol",
-//   "Madlen Çikolata"
-// ]
-
-// const mevsimlikTatlar = [
-// "Pekan",
-// "Kaju",
-// "Çikolatalı Mousse",
-// "Fransız Vanilyası",
-// "Yumurta",
-// "Alman çikolatası",
-// "Kek üzerine krema",
-// "Hindistan Cevizi",
-// "Kaymaklı Biskuvi",
-// "Beyaz Çikolata",
-// "Mango"
-// ]
-
-// const bolgeselTatlar = [
-// "Kaymak",
-// "Karpuz",
-// "Karadut",
-// "Turunç",
-// "Portakal",
-// "Yogurt",
-// "Krem Peynir",
-// "Kakao",
-// "Karamel macchiato",
-// "Kuru üzüm",
-// "Peynir",
-// "Karamel"
-// ]
+function rastgeleTatlar(n) {
+  /*kod buraya*/
+  var rastTatlar = yeniNesilTatlar();
+ 
+ 
+    let newArrTat = [];
+    if(n >= rastTatlar.length){
+      return rastTatlar
+    }
+    for(var i = 0; i<n; i++){
+      var newEl = rastTatlar[Math.floor(Math.random() * rastTatlar.length)];
+      while (newArrTat.includes(newEl)){
+        newEl = rastTatlar[Math.floor(Math.random() * rastTatlar.length)];
+      }
+      newArrTat.push(newEl)
+    }
+    return newArrTat;
+  }
+  
+console.log(rastgeleTatlar(2));
+// console.log(rastgeleTatlar());
+// NEW DATA ARRAYS FOR STRETCH 2 ⬇
 
 /* Lütfen bu satırın altındaki hiçbir şeyi değiştirmeyin */
 function sa() {
