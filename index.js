@@ -79,7 +79,7 @@ function cesitEkle(tatlar, yeniTat) {
   yeniTatlar.unshift(yeniTat);
   return yeniTatlar;
 }
-console.log(cesitEkle("Kaku"));
+console.log(cesitEkle(orijinalTatlar,"Kakule"));
 
 /* Cörev 4:
 
@@ -99,7 +99,7 @@ function sonCesitiKaldir(/*kod buraya*/) {
   return arr3;
 }
 console.log(sonCesitiKaldir());
-console.log("sa");
+// console.log("deneme");
 
 /* Görev 5:
 Dizideki belirli bir indeksteki çeşniyi döndüren bir işlev yazın.
@@ -118,7 +118,7 @@ function indekstekiCesitiGetir(tatlar, index) {
   return values[index];
   /*kod buraya*/
 }
-console.log(indekstekiCesitiGetir(orijinalTatlar, 2));
+console.log(indekstekiCesitiGetir(orijinalTatlar, 4));
 
 /* Görev 6:
 
@@ -175,7 +175,7 @@ function ismeGoreFiltrele(tatlar, filtre) {
   }
   return arch2;
 }
-console.log(ismeGoreFiltrele(orijinalTatlar, "Çikolata"));
+console.log(ismeGoreFiltrele(orijinalTatlar, "Fındık"));
 
 /* ALIŞTIRMA */
 
