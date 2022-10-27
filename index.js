@@ -203,8 +203,7 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 function ismeGoreFiltrele(tatlar, filtre) {
   /*kod buraya*/
   var arch = kopyala(tatlar);
-  var arch2 = arch.slice();
-  arch2.splice(0,arch2.length)
+  var arch2 = [];
   for (var i = 0; i < arch.length; i++) {
     if (arch[i].includes(filtre)) {
       arch2.push(arch[i]);
@@ -212,7 +211,7 @@ function ismeGoreFiltrele(tatlar, filtre) {
   }
   return arch2;
 }
-console.log(ismeGoreFiltrele(orijinalTatlar, "Fındık"));
+console.log(ismeGoreFiltrele(orijinalTatlar, "Çikolata"));
 
 /* ALIŞTIRMA */
 
@@ -287,7 +286,7 @@ function rastgeleTatlar(n) {
     return newArrTat;
   }
   
-console.log(rastgeleTatlar(2));
+console.log(rastgeleTatlar(5));
 // console.log(rastgeleTatlar());
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇
 
